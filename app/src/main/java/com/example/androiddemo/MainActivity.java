@@ -2,6 +2,7 @@ package com.example.androiddemo;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.DialogFragment;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -12,6 +13,8 @@ import android.widget.Button;
 import com.example.androiddemo.web.JJWebViewTest;
 import com.example.androiddemo.layout.LayoutDemo;
 import com.example.androiddemo.widget.WidgetDemo;
+
+//打包密钥生成：https://www.jianshu.com/p/aae17a5e9e59
 
 public class MainActivity extends AppCompatActivity {
 
@@ -27,8 +30,9 @@ public class MainActivity extends AppCompatActivity {
                 gotoLayoutDemoTest();
             }
         });
-    }
 
+
+    }
     private static final String TAG = "MainActivity";
 
     private void gotoLayoutDemoTest() {

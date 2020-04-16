@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">AndroidDemo</string>
+    <string name="title_jjtestmodule">Module Title</string>
 </resources>
