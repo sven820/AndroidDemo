@@ -20,7 +20,13 @@ android {
         }
         release {
             buildConfigField "Boolean", "LOG_DEBUG", "false"
-            minifyEnabled false
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+        //内部测试
+        innerRelease {
+            minifyEnabled true
+            buildConfigField "boolean", "INNER_RELEASE", "true"
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
