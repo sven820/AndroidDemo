@@ -32,6 +32,9 @@ public class JJTestJavaDemo implements JJTestInterface1 {
 
         final int d = 10;
         TAG_A = 20;
+
+        int[] nums = {1, 2, 3, 4};
+        // map怎么简写
     }
 
     //构造方法

@@ -10,7 +10,13 @@ public class Jsonxuliehua {
 
     Jsonxuliehua() {
 
-        Person[] family = new ArrayList<Person>();
+        Person[] testarr = new Person[10];
+        ArrayList<Person> family = new ArrayList<Person>();
+        Person pp = new Person();
+        pp.name = "mm";
+        pp.age = 20;
+        family.add(pp);
+        testarr[0] = pp;
 
         Map p = new HashMap();
         p.put("name", "jxf");
