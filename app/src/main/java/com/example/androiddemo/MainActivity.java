@@ -7,6 +7,7 @@ import androidx.fragment.app.DialogFragment;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.PersistableBundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -30,7 +31,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
         this.setTitle("main");
 
         textView = findViewById(R.id.textView);
@@ -42,6 +42,17 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        if (savedInstanceState != null) { //持久化数据恢复
+            textView.setText(savedInstanceState.getString("msg"));
+        }
+    }
+
+    @Override
+    public void onSaveInstanceState(Bundle outState, PersistableBundle outPersistentState) {
+        super.onSaveInstanceState(outState, outPersistentState);
+
+        String msg = (String) textView.getText();
+        outState.putString("msg", msg);
     }
 
     @Override

@@ -11,7 +11,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".intent.IntentDemoActivity">
+<!-- singleTop: 使用栈顶， singleTask, singleInstance  -->
+        <activity
+            android:launchMode="singleInstance"
+            android:name=".intent.IntentDemoActivity">
             <intent-filter>
                 <action android:name="com.example.androiddemo.IntentDemoActivity.action"/>
                 <action android:name="com.example.androiddemo.IntentDemoActivity.test"/>
@@ -24,7 +27,6 @@
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
