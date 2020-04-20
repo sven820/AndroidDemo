@@ -31,10 +31,16 @@
             android:textAllCaps="false"
             android:text="widget"
             android:layout_height="44dp"/>
+        <Button
+            android:onClick="openIntentDemo"
+            android:textAllCaps="false"
+            android:text="intent"
+            android:layout_height="44dp"/>
         <TextView
+            android:id="@+id/textView"
             android:text="placeholder"
             android:background="#999999"
-            android:layout_height="500dp"
+            android:layout_height="wrap_content"
             android:layout_width="match_parent"/>
 
     </TableLayout>
