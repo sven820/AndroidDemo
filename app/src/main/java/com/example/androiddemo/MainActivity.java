@@ -45,6 +45,7 @@ public class MainActivity extends AppCompatActivity {
         if (savedInstanceState != null) { //持久化数据恢复
             textView.setText(savedInstanceState.getString("msg"));
         }
+
     }
 
     @Override

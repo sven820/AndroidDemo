@@ -11,14 +11,19 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-<!-- singleTop: 使用栈顶， singleTask, singleInstance  -->
+        <activity android:name=".widget.ListViewActivityDemo"></activity>
+        <activity android:name=".layout.FramelayoutActivityDemo" />
+        <activity android:name=".layout.ConstraintslayoutActivityDemo" />
+        <activity android:name=".layout.RelativelayoutActivityDemo" />
+        <activity android:name=".layout.LinerlayoutActivityDemo" /> <!-- singleTop: 使用栈顶， singleTask, singleInstance -->
         <activity
-            android:launchMode="singleInstance"
-            android:name=".intent.IntentDemoActivity">
+            android:name=".intent.IntentDemoActivity"
+            android:launchMode="singleInstance">
             <intent-filter>
-                <action android:name="com.example.androiddemo.IntentDemoActivity.action"/>
-                <action android:name="com.example.androiddemo.IntentDemoActivity.test"/>
-                <category android:name="android.intent.category.DEFAULT"/>
+                <action android:name="com.example.androiddemo.IntentDemoActivity.action" />
+                <action android:name="com.example.androiddemo.IntentDemoActivity.test" />
+
+                <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
         <activity android:name=".widget.WidgetDemo" />
@@ -27,6 +32,7 @@
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
