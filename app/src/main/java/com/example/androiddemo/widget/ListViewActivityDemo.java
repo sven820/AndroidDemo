@@ -10,10 +10,12 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Adapter;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.androiddemo.R;
 
@@ -48,26 +50,26 @@ public class ListViewActivityDemo extends AppCompatActivity {
         p.name = "test";
         p.age = 99;
 
-        ArrayList<FamousPerson> famousPeople = new ArrayList<>();
+        final ArrayList<FamousPerson> famousPeople = new ArrayList<>();
         famousPeople.add(p);
         famousPeople.add(p);
         FamousPersonAdapter adapter = new FamousPersonAdapter(this,
                 R.layout.famous_person_item, famousPeople);
         listView.setAdapter(adapter);
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                FamousPerson p = famousPeople.get(position);
+                Toast.makeText(ListViewActivityDemo.this, p.name, Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 }
 
 class FamousPersonAdapter extends ArrayAdapter<FamousPerson> {
 
     int resourceId;
-    /**
-     * Constructor
-     *
-     * @param context  The current context.
-     * @param resource The resource ID for a layout file containing a TextView to use when
-     *                 instantiating views.
-     * @param objects  The objects to represent in the ListView.
-     */
+
     public FamousPersonAdapter(@NonNull Context context, int resource,
                                @NonNull List<FamousPerson> objects) {
         super(context, resource, objects);
@@ -79,11 +81,29 @@ class FamousPersonAdapter extends ArrayAdapter<FamousPerson> {
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
 
         FamousPerson p = getItem(position);
-        View view = LayoutInflater.from(getContext()).inflate(resourceId, parent, false);
-        ImageView imgView = view.findViewById(R.id.head_icon);
-        imgView.setImageResource(R.mipmap.jxf_test);
-        TextView tView = view.findViewById(R.id.name);
-        tView.setText(p.name);
-        return  view;
+        ViewHolder viewHolder;
+        if (convertView == null) {
+            View view = LayoutInflater.from(getContext()).inflate(resourceId, parent, false);
+            viewHolder = new ViewHolder(view);
+        }else {
+            viewHolder = (ViewHolder)convertView.getTag();
+        }
+        viewHolder.imgView.setImageResource(R.mipmap.jxf_test);
+        viewHolder.nameView.setText(p.name);
+        return  viewHolder.view;
+    }
+
+    class ViewHolder {
+        ImageView imgView;
+        TextView nameView;
+
+        View view;
+
+        ViewHolder(View view) {
+            view.setTag(this);
+            this.view = view;
+            imgView = view.findViewById(R.id.head_icon);
+            nameView = view.findViewById(R.id.name);
+        }
     }
 }

@@ -57,6 +57,22 @@
             android:text="listView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
+        <Button
+            android:onClick="onClickTestRecycleView"
+            android:textAllCaps="false"
+            android:text="recycleView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <View
+            android:background="@mipmap/dialogbox_msg_im_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <Button
+            android:text="fragment"
+            android:textAllCaps="false"
+            android:onClick="onClickTestFragment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
 
     </LinearLayout>
 

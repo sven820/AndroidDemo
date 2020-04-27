@@ -15,9 +15,9 @@ import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.example.androiddemo.R;
-import com.example.androiddemo.widget.ListViewActivityDemo;
 
 public class WidgetDemo extends AppCompatActivity {
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -84,5 +84,12 @@ public class WidgetDemo extends AppCompatActivity {
     }
     public void onClickTestListView(View view) {
         startActivity(new Intent(this, ListViewActivityDemo.class));
+    }
+    public void onClickTestRecycleView(View view) {
+        startActivity(new Intent(this, RecycleViewActivityDemo.class));
+    }
+
+    public void onClickTestFragment(View view) {
+        startActivity(new Intent(this, DemoFragmentActivity.class));
     }
 }
