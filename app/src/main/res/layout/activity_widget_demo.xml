@@ -73,6 +73,12 @@
             android:onClick="onClickTestFragment"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
+        <Button
+            android:text="fragmentAuto"
+            android:textAllCaps="false"
+            android:onClick="onClickTestFragmentAuto"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
 
     </LinearLayout>
 

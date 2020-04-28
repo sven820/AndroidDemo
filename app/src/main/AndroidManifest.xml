@@ -2,7 +2,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.androiddemo">
 
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
 
     <application
         android:allowBackup="true"
@@ -11,8 +13,27 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".widget.DemoFragmentActivity"></activity>
-        <activity android:name=".widget.RecycleViewActivityDemo"></activity>
+        <receiver
+            android:name=".broadcast.MyReceiver"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="com.example.androiddemo.broadcast.jjtest"/>
+            </intent-filter>
+        </receiver>
+        <receiver
+            android:name=".broadcast.BootCompleteReceiver"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+        </receiver>
+
+        <activity android:name=".broadcast.BroadcastDemoActivity" />
+        <activity android:name=".widget.DemoFragmentAutoActivity" />
+        <activity android:name=".widget.DemoFragmentActivity" />
+        <activity android:name=".widget.RecycleViewActivityDemo" />
         <activity android:name=".widget.ListViewActivityDemo" />
         <activity android:name=".layout.FramelayoutActivityDemo" />
         <activity android:name=".layout.ConstraintslayoutActivityDemo" />

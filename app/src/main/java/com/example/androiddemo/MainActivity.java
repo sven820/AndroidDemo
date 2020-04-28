@@ -14,6 +14,7 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.androiddemo.broadcast.BroadcastDemoActivity;
 import com.example.androiddemo.web.JJWebViewTest;
 import com.example.androiddemo.layout.LayoutDemo;
 import com.example.androiddemo.widget.WidgetDemo;
@@ -111,6 +112,10 @@ public class MainActivity extends AppCompatActivity {
         t.putExtra("msg", "hello");
         startActivityForResult(t, 1);
 //        startActivity(new Intent("com.example.androiddemo.IntentDemoActivity.test"));
+    }
+
+    public void openBroadcastDemo(View view) {
+        startActivity(new Intent(this, BroadcastDemoActivity.class));
     }
 
     @Override

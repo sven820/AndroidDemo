@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-xmlns:app="http://schemas.android.com/apk/res-auto"
-xmlns:tools="http://schemas.android.com/tools"
-android:layout_width="match_parent"
-android:layout_height="match_parent"
-tools:context=".widget.ListViewActivityDemo">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".widget.DemoFragmentAutoActivity">
 
     <fragment
         android:id="@+id/menu_fragment"
@@ -13,10 +12,10 @@ tools:context=".widget.ListViewActivityDemo">
         android:layout_width="0dp"
         android:layout_weight="1"
         android:layout_height="match_parent"/>
-    <FrameLayout
+    <fragment
         android:id="@+id/detail_fragment"
+        android:name="com.example.androiddemo.widget.FamousPeopleInfoFragment"
         android:layout_width="0dp"
         android:layout_weight="4"
         android:layout_height="match_parent"/>
-
 </LinearLayout>

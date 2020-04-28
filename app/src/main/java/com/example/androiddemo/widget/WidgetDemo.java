@@ -92,4 +92,7 @@ public class WidgetDemo extends AppCompatActivity {
     public void onClickTestFragment(View view) {
         startActivity(new Intent(this, DemoFragmentActivity.class));
     }
+    public void onClickTestFragmentAuto(View view) {
+        startActivity(new Intent(this, DemoFragmentAutoActivity.class));
+    }
 }
