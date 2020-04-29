@@ -25,9 +25,3 @@ public class Jsonxuliehua {
     }
 }
 
-class Person implements Serializable {
-
-    String name;
-    int age;
-    Person[] family;
-}

@@ -15,6 +15,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.androiddemo.broadcast.BroadcastDemoActivity;
+import com.example.androiddemo.store.StoreActivity;
 import com.example.androiddemo.web.JJWebViewTest;
 import com.example.androiddemo.layout.LayoutDemo;
 import com.example.androiddemo.widget.WidgetDemo;
@@ -116,6 +117,10 @@ public class MainActivity extends AppCompatActivity {
 
     public void openBroadcastDemo(View view) {
         startActivity(new Intent(this, BroadcastDemoActivity.class));
+    }
+
+    public void openStoreDemo(View view) {
+        startActivity(new Intent(this, StoreActivity.class));
     }
 
     @Override

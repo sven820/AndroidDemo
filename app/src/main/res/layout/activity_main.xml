@@ -41,6 +41,12 @@
             android:textAllCaps="false"
             android:text="broadcast"
             android:layout_height="44dp"/>
+        <Button
+            android:onClick="openStoreDemo"
+            android:textAllCaps="false"
+            android:text="store"
+            android:layout_height="44dp"/>
+
 
     </TableLayout>
 
