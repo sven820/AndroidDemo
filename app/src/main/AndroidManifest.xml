@@ -5,6 +5,7 @@
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
 
     <application
         android:name="org.litepal.LitePalApplication"
@@ -14,7 +15,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".permission.PermissionActivityDemo"></activity>
+        <activity android:name=".studyjava.JavaUsageActivity"></activity>
+        <activity android:name=".service.ServiceDemoActivity" />
+        <activity android:name=".thread.ThreadDemoActivity" />
+        <activity android:name=".permission.PermissionActivityDemo" />
         <activity android:name=".store.StoreActivity" />
 
         <receiver
@@ -63,6 +67,15 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <service
+            android:name=".service.MyService"
+            android:enabled="true"
+            android:exported="true" />
+        <service
+            android:name=".service.MyIntentService"
+            android:enabled="true"
+            android:exported="true" />
     </application>
 
 </manifest>

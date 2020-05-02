@@ -2,9 +2,13 @@ package com.example.androiddemo.widget;
 
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.NotificationCompat;
 
 import android.app.AlertDialog;
 import android.app.Dialog;
+import android.app.Notification;
+import android.app.NotificationManager;
+import android.app.PendingIntent;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
@@ -15,6 +19,7 @@ import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.example.androiddemo.R;
+import com.example.androiddemo.web.JJWebViewTest;
 
 public class WidgetDemo extends AppCompatActivity {
 
@@ -31,6 +36,7 @@ public class WidgetDemo extends AppCompatActivity {
         if (bar != null) {
             bar.hide();
         }
+
     }
 
     @Override
@@ -94,5 +100,18 @@ public class WidgetDemo extends AppCompatActivity {
     }
     public void onClickTestFragmentAuto(View view) {
         startActivity(new Intent(this, DemoFragmentAutoActivity.class));
+    }
+    public void onClickTestNotification(View view) {
+        NotificationManager manager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
+        Notification build = new NotificationCompat.Builder(this, "test")
+                .setContentTitle("demo")
+                .setContentInfo("demo")
+                .setSmallIcon(R.mipmap.ic_launcher)
+                .setAutoCancel(true)
+                .setContentIntent(PendingIntent.getActivity(this, 0, new Intent(this,
+                        WidgetDemo.class),0))
+                .setPriority(NotificationCompat.PRIORITY_MAX)
+                .build();
+        manager.notify(1, build);
     }
 }

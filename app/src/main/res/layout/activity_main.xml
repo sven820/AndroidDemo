@@ -12,6 +12,12 @@
         tools:context=".MainActivity">
 
         <Button
+            android:onClick="onClickForJavaUsage"
+            android:id="@+id/java_usage"
+            android:textAllCaps="false"
+            android:text="java_usage"
+            android:layout_height="44dp"/>
+        <Button
             android:id="@+id/layout"
             android:textAllCaps="false"
             android:text="layout"
@@ -46,7 +52,21 @@
             android:textAllCaps="false"
             android:text="store"
             android:layout_height="44dp"/>
-
+        <Button
+            android:onClick="openPermissionDemo"
+            android:textAllCaps="false"
+            android:text="permission"
+            android:layout_height="44dp"/>
+        <Button
+            android:onClick="openThreadDemo"
+            android:textAllCaps="false"
+            android:text="thread"
+            android:layout_height="44dp"/>
+        <Button
+            android:onClick="openServiceDemo"
+            android:textAllCaps="false"
+            android:text="service"
+            android:layout_height="44dp"/>
 
     </TableLayout>
 

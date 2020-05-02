@@ -5,23 +5,29 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".web.JJWebViewTest">
+    tools:context=".service.ServiceDemoActivity">
 
     <Button
-        android:onClick="onClickForWebView"
-        android:text="webView"
+        android:onClick="startService"
+        android:text="startService"
         android:textAllCaps="false"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
     <Button
-        android:onClick="onClickForGetRequest"
-        android:text="getRequest"
+        android:onClick="stopService"
+        android:text="stopService"
         android:textAllCaps="false"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
     <Button
-        android:onClick="onClickForPostRequest"
-        android:text="postRequest"
+        android:onClick="bindService"
+        android:text="bindService"
+        android:textAllCaps="false"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+    <Button
+        android:onClick="unbindService"
+        android:text="unbindService"
         android:textAllCaps="false"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>

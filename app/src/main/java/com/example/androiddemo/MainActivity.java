@@ -15,7 +15,11 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.androiddemo.broadcast.BroadcastDemoActivity;
+import com.example.androiddemo.permission.PermissionActivityDemo;
+import com.example.androiddemo.service.ServiceDemoActivity;
 import com.example.androiddemo.store.StoreActivity;
+import com.example.androiddemo.studyjava.JavaUsageActivity;
+import com.example.androiddemo.thread.ThreadDemoActivity;
 import com.example.androiddemo.web.JJWebViewTest;
 import com.example.androiddemo.layout.LayoutDemo;
 import com.example.androiddemo.widget.WidgetDemo;
@@ -97,11 +101,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public  void openWebView(View sender) {
-//        startActivity(new Intent(MainActivity.this, JJWebViewTest.class));
-        //系统浏览器
-        Intent t = new Intent(Intent.ACTION_VIEW);
-        t.setData(Uri.parse("https://www.baidu.com"));
-        startActivity(t);
+        startActivity(new Intent(MainActivity.this, JJWebViewTest.class));
     }
 
     public void testInXmlAction(View sender) {
@@ -123,6 +123,9 @@ public class MainActivity extends AppCompatActivity {
         startActivity(new Intent(this, StoreActivity.class));
     }
 
+    public void openPermissionDemo(View view) {
+        startActivity(new Intent(this, PermissionActivityDemo.class));
+    }
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
@@ -136,5 +139,17 @@ public class MainActivity extends AppCompatActivity {
                     Toast.makeText(this, msg, Toast.LENGTH_SHORT).show();
                 }
         }
+    }
+
+    public void openThreadDemo(View view) {
+        startActivity(new Intent(this, ThreadDemoActivity.class));
+    }
+
+    public void openServiceDemo(View view) {
+        startActivity(new Intent(this, ServiceDemoActivity.class));
+    }
+
+    public void onClickForJavaUsage(View view) {
+        startActivity(new Intent(this, JavaUsageActivity.class));
     }
 }
