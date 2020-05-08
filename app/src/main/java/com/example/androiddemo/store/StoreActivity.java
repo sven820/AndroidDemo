@@ -13,6 +13,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.example.androiddemo.R;
+import com.google.gson.Gson;
 
 import org.litepal.LitePal;
 import org.litepal.crud.DataSupport;

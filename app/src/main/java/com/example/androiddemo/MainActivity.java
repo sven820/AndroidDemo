@@ -4,6 +4,7 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.DialogFragment;
 
+import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
@@ -51,7 +52,7 @@ public class MainActivity extends AppCompatActivity {
         if (savedInstanceState != null) { //持久化数据恢复
             textView.setText(savedInstanceState.getString("msg"));
         }
-
+        Context context = getApplicationContext();
     }
 
     @Override
